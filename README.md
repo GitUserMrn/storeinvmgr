@@ -35,7 +35,10 @@ The Store Inventory Management System is a Java-based application designed to he
 
 1. Run the program and choose options based on the menu prompts.
 2. Use the "load" argument to load previously saved data, if desired.
-3. Follow on-screen instructions to perform various operations.
+3. If "p_list.txt" file has not been created, add products and write to file.
+4. If "p_list.txt" file is present, you can either import it's data or create a new file to overwrite.
+5. Follow on-screen instructions to perform various operations.
+
 
 ## Contribution
 
