@@ -55,4 +55,6 @@ class P_LIST {
     }
     public ArrayList<Product> getProducts() {
         return p_List; }  // for gui which is not ready YET
+    public HashMap<String, Product> getP_Map() {
+        return p_Map;}
 }

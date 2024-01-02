@@ -5,9 +5,9 @@ public class StoreInventory {
         P_LIST p_list = new P_LIST();
         int choice = 0;
         int choice1;
-        int verif_save=0;
+        boolean verif_save=false;
         if (args.length != 0) {
-            if(args[0].equals("load")){
+            if(args[0].equals("read")){
                 // read prods from file by using program arguments
                 p_list.readProductsFile();
             }
@@ -44,7 +44,7 @@ public class StoreInventory {
                 case 2:
                     p_list.writeProductsFile();
                     System.out.println("\nSuccessfully saved the data\n");
-                    verif_save=1;
+                    verif_save=true;
                     break;
                 case 3:
                     myObj = new Scanner(System.in);
@@ -90,8 +90,9 @@ public class StoreInventory {
                     String delete = myObj.nextLine();
                     try {
                         p_list.removeProduct(delete);
+                        System.out.println("Product removed successfully.");
                     } catch (MissingProduct e) {
-                        throw new RuntimeException(e);
+                        System.out.println("Error: " + e.getMessage());
                     }
                     break;
                 case 5:
@@ -99,7 +100,7 @@ public class StoreInventory {
                     p_list.displayProducts();
                     break;
                 case 99:
-                    if(verif_save==0){
+                    if(verif_save==false){
                         System.out.println("\nWould you like to save before exiting?\n" +
                                 "1)Y\n" +
                                 "2)N\n");

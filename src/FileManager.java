@@ -11,7 +11,7 @@ class FileManager implements Readable, Writeable {
         } catch (ClassNotFoundException e) {
             System.out.println("Error reading file: " + e.getMessage());
         }
-        throw new IOException("Error reading file: Class not found.");
+        throw new IOException("Error reading file: Class not found."); //handle crash
     }
 
     @Override
