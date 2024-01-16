@@ -75,8 +75,9 @@ public class StoreInventory {
                             System.out.println("error: Invalid quantity");
                         }
                     } while (!quantity.matches("\\d+"));
+                    int id=0;
 
-                    Product product1 = new Product(name, price, quantity);
+                    Product product1 = new Product(id, name, price, quantity);
                     try {
                         p_list.addProduct(product1);
                         System.out.println("Product added successfully.");
